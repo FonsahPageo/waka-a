@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bus Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <meta http-equiv="refresh" content="5"> -->
 </head>
+
 <body>
-    
+    <header>
+        <img src="{{ url_for('static', filename='images/dummy-logo.png') }}" alt="Image not found, please check">
+        <a href="account.html"><i class="fa-regular fa-circle-user"></i></a>
+    </header>
+
+    <div class="chart-forms">
+        <form method="POST" action="/">
+            <label for="size1">Size 1:</label>
+            <input type="text" name="size1" id="size1" required><br><br>
+
+            <label for="size2">Size 2:</label>
+            <input type="text" name="size2" id="size2" required><br><br>
+
+            <label for="size3">Size 3:</label>
+            <input type="text" name="size3" id="size3" required><br><br>
+
+            <label for="size4">Size 4:</label>
+            <input type="text" name="size4" id="size4" required><br><br>
+
+            <button type="submit" name="form1" value="">Update Chart 1</button>
+        </form>
+
+        <form method="POST" action="/">
+            <label for="running">Running:</label>
+            <input type="text" name="running" id="running" required><br><br>
+
+            <label for="repairing">Under maintenance:</label>
+            <input type="text" name="repairing" id="repairing" required><br><br>
+
+            <label for="waiting">Pending review:</label>
+            <input type="text" name="waiting" id="waiting" required><br><br>
+
+            <label for="stopped">Out of Service:</label>
+            <input type="text" name="stopped" id="stopped" required><br><br>
+
+            <button type="submit" name="form2" value="">Update Chart 2</button>
+        </form>
+    </div>
+
+    <div class="content">
+        <section class="section-1">
+            <div class="box">
+                <!-- <h2>Ma flote</h2> -->
+                <img src="data:image/png;base64,{{ chart_base64 }}" alt="Pie Chart">
+            </div>
+            <div class="box">
+                <img src="data:image/png;base64,{{ chart_base64 }}" alt="Pie Chart">
+            </div>
+            <div class="box">
+
+            </div>
+        </section>
+    </div>
+
 </body>
+
 </html>
